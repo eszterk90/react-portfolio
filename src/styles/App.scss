@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bigelow+Rules&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
+@import './variables';
+@import './mixins';
+
+body {
+    background-image: radial-gradient(circle, $color-yellow, $color-lightGrey);
+    
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, $color-yellow, $color-lightGrey);
+}
+
+.home-container {
+    height: 100vh;
+}
+
+.name-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        font-size: 5rem;
+    }
+
+}
+
+ .regular-style {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.developer-text {
+    align-self: flex-end;
+    margin: 0 2rem;
+    animation: fadein 2s;
+    transition: opacity 2s ease-in;
+    a {
+        text-decoration: none;
+        color: $color-black;
+        :hover {
+            color: $color-green;
+            transition-duration: 2s;
+            opacity: 1;
+            text-shadow: 2px 2px 3px $color-black;
+            text-shadow: none;
+        }
+    }
+}
+
+@keyframes fadein {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+
+h1, h2, h3 {
+    font-size: 4rem;
+    font-family: 'Bebas Neue';
+}
+
+/* navbar styling */
+
+.btn {
+    display: inline-block;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    transition: opacity 1s ease-out;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.menu-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    .menu {
+        background-color: $color-black;
+    }
+    .toggler {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        cursor: pointer;
+        width: 5rem;
+        height: 5rem;
+        opacity: 0;
+    }
+    .hamburger {
+        @include flex-center; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 5rem;
+        height: 5rem;
+        padding: 1rem;
+    }
+}
+
+// hamburger line (middle)
+
+.menu-wrap .hamburger > div {
+    @include flex-center;
+    position: relative;
+    width: 100%;
+    height: 0.2rem;
+    background-color: $color-green;
+    transition: all 0.4s ease-in;
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -1rem;
+        width: 100%;
+        height: 0.2rem;
+        background: inherit;
+    }
+    &::after {
+        top: 1rem;
+    }
+}
+
+// toggler animate 
+
+.menu-wrap .toggler:checked + .hamburger > div {
+    transform: rotate(135deg);
+}
+
+// turn line into X 
+
+.menu-wrap .toggler:checked + .hamburger > div::before, 
+.menu-wrap .toggler:checked + .hamburger > div::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+// rotate on hover when checked 
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+    transform: rotate(225deg);
+}
+
+// show menu 
+
+.menu-wrap .toggler:checked ~ .menu {
+    visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+    transform: scale(1);
+    transition-duration: $menu-speed;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+    opacity: 1;
+    @include transition(opacity);
+}
+
+.menu-wrap .menu {
+    @include flex-center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.menu-wrap .menu > div {
+    width: 100vw;
+    height: 100vh;
+    @include flex-center;
+    flex: none;
+    transform: scale(0);
+    @include transition(all);
+}
+
+.menu-wrap .menu > div > div {
+    text-align: center;
+    max-width: 90%;
+    max-height: 100%;
+    @include transition(opacity);
+}
+
+
+.menu-wrap .menu > div > div ul li {
+    list-style-type: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+    display: inline-block;
+    line-height: 1.5rem;
+}
+
+.menu-wrap .menu > div > div ul li a {
+    color: $color-yellow;;
+    text-decoration: none;
+    font-size: 1.8rem;
+    @include transition(color);
+    &:hover {
+        color: $color-green;
+    }
+}
+
+#home {
+    color: $color-green;
+    &:hover {
+        color: $color-yellow;
+    }
+}
+
+
+// side_container styling 
+
+.sec-2 {
+    display: grid;
+    width: 100%;
+    grid-template-areas: 'intro skills'
+                         'about about';
+    grid-template-rows: 40% 60%;
+    grid-template-columns: 50% 50%;
+    background-image: radial-gradient(circle, $color-yellow, $color-lightGrey);
+}
+
+.side_container {
+    grid-area: intro;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: $padding-container;
+    .img_container img {
+        width: 15rem;
+        border-radius: 50%;
+        margin: 0 2rem;
+    }
+    
+    .intro h3 {
+        color: $color-black;
+        font-size: $h3-size;
+    }
+}
+
+// about styling
+
+.about {
+    grid-area: about;
+    display: flex;
+    flex-direction: column;
+    padding: $sm-padding-container;
+    background-color: $color-grey;
+    h2 {
+        font-size: $h2-size;
+        padding: 2rem 0;
+        color: $color-green;
+    }
+    h3 {
+        font-size: $h3-size;
+        color: $color-green;
+    }
+    p {
+        margin: 2rem 0;
+        color: $color-yellow;
+        font-size: 1.5rem;
+    }
+}
+
+// skills styling
+
+.skills {
+    grid-area: skills;
+    width: 100%;
+    padding: $sm-padding-container;
+    display: flex;
+    flex-direction: column;
+    h3 {
+        text-align: center;
+        font-size: $h3-size;
+        padding-top: 2.5rem;
+        color: $color-grey;
+    }
+    .skills_container {
+        display: grid;
+        width: 100%;
+        place-items: center;
+        grid-template-areas: "skill1 skill2 skill3 skill4"
+                             "skill5 skill6 skill7 skill8";
+        grid-template-columns: repeat(4, 0.5fr);
+        grid-template-rows: repeat(2, 0.5fr);
+        .skill {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            text-align: center;
+            color: $color-grey;
+            h4 {
+                font-family: 'IBM Plex Mono', monospace;
+                font-weight: 300;
+           }
+           .skill-icon {
+            font-size: 4rem;
+            font-weight: 200;
+           }
+           .star i {
+            font-size: 2rem;
+           }
+        }
+    }
+}
+
+// projects styling
+
+.sec-3 {
+    background-color: $color-grey;
+    padding: 4rem 0;
+    height: 100%;
+    h2 {
+        font-size: $h2-size;
+        padding: 2rem 0;
+        color: $color-yellow;
+        text-align: center;
+    }
+    .project_list a {
+        @include anchor;
+        color: $color-yellow;
+        font-size: 2rem;
+        display: block;
+        text-align: center;
+        font-weight: 100;
+        padding: 0.8rem 1.5rem;
+        border: 1px solid $color-green;
+        width: fit-content;
+        margin: 2rem auto;
+        border-radius: $border-radius;
+        &:hover {
+            background-color: $color-lightGrey;
+        }
+    }
+}
+
+.projects_wrapper {
+    @include flex-center;
+    margin: $margin-container;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    width: calc(33% - $margin-container);
+    margin: 1rem;
+    flex-basis: 0;
+    flex-grow: 2;
+    flex-shrink: 2;
+    .description {
+        margin: 1.2rem 0;
+        h5 {
+            font-size: $h5-size;
+            margin: 1.2rem 0;
+            color: $color-green;
+        }
+        p {
+            color: $color-yellow;
+            font-size: 1.5rem;
+        }
+    }
+}
+.project_container .click_here {
+    display: none;
+    a {
+        display: none;
+    }
+}
+
+.project_container:hover .click_here {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    background-color: $color-black;
+    border-radius: $border-radius;
+    z-index: 100;
+    a {
+        color: $color-green;
+        font-weight: 100;
+        @include anchor;
+        margin: 1rem;
+        display: inline-block;
+        text-align: center;
+        font-size: 2rem;
+    }
+}
+
+.project_container:hover {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 99%;
+        background-image: linear-gradient(to bottom right, grey);
+        border-radius: $border-radius;
+        opacity: 0.5;
+    }
+}
+
+.project_container img {
+    width: 100%;
+    border-radius: $border-radius;
+}
+
+// contact page styling
+
+.main-contact {
+   height: 100%;
+
+}
+
+.header {
+    text-align: left;
+    h1 {
+        font-size: $h1-size;
+    }
+
+}
+
+.message-me { 
+    font-size: $h3-size;
+    font-family: 'Bebas Neue';
+    span {
+        color: $color-green;
+    }
+    p{
+        color: $color-black;
+    }
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+.form {
+    display: flex;
+    flex-direction: column;
+}
+.formContainer input, textarea {
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 0.3rem;
+} 
+
+.formContainer input {
+    height: 50px;
+}
+.formContainer textarea{
+    height: 200px;
+}
+
+.formContainer label {
+    font-size: 1.3rem
+}
+button {
+    text-decoration: none;
+    align-self: center;
+    color: $color-yellow;
+    background-color: $color-black;
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+    font-weight: 100;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid transparent;
+    width: fit-content;
+    border-radius: 0.3rem;
+} button:hover {
+    background-color: $color-grey;
+}
+
+
+
+// mobile version
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 50%;
+        scroll-padding-block-start: 8rem;
+    }
+
+    .menu-wrap .menu {
+        height: 15%;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-contact {
+        grid-template-areas: 'img'
+                             'form';
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .projects_wrapper {
+        flex-direction: column;
+    }
+
+    .projects {
+        width: 90%;
+    }
+
+    .formContainer label {
+        font-size: 1.5rem
+    }
+
+    .formContainer input, textarea {
+        font-size: 2rem;
+    }
+}

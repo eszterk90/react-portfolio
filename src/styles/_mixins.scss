@@ -1,0 +1,23 @@
+
+@mixin fade-in {
+    -webkit-animation: fade-in 3s ease-out 1;
+    animation: fade-in 3s ease-out 1;
+}
+
+@mixin anchor {
+    text-decoration: none;
+    color: $color-green;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin transition ($property) {
+    transition: $property 0.4s ease;
+}
+
+

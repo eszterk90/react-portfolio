@@ -1,11 +1,11 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useContext} from 'react'
 import Context from '../../store/context'
 import {Link} from 'react-router-dom'
 import TextAnimation from './TextAnimation'
 
 function Form() {
 
-  const { userMessage, setUserMessage, allMessages, setAllMessages, submit, setSubmit, formErrors, setFormErrors, onInputChange, onSubmitMessage, validate, handleResubmit, useEffect} = useContext(Context);
+  const { submit, formErrors,  onInputChange, onSubmitMessage} = useContext(Context);
 
   return (
     <div className='formContainer'>

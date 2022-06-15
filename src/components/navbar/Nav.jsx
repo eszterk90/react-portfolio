@@ -17,7 +17,7 @@ function Nav() {
                         <li><NavLink to="/" id="home">HOME</NavLink></li>
                         <li><NavLink to="/about">About</NavLink></li>
                         <li><NavLink to="/projects">Projects</NavLink></li>
-                        <li><NavLink to="/contact" onClick={handleResubmit}>Hire me!</NavLink></li>
+                        <li><NavLink to="/contact" onClick={handleResubmit}>Contact</NavLink></li>
                     </ul>
                 </div>
             </div>

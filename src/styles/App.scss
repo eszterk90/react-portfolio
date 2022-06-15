@@ -85,9 +85,9 @@ h1, h2, h3 {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 10;
     .menu {
-        background-color: $color-black;
+        background-color: $color-grey;
     }
     .toggler {
         position: absolute;
@@ -216,9 +216,9 @@ h1, h2, h3 {
 }
 
 #home {
-    color: $color-green;
+    color: $color-yellow;
     &:hover {
-        color: $color-yellow;
+        color: $color-green;
     }
 }
 
@@ -240,11 +240,13 @@ h1, h2, h3 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: $padding-container;
+    //padding: $padding-container;
     .img_container img {
         width: 15rem;
         border-radius: 50%;
         margin: 0 2rem;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
     }
     
     .intro h3 {
@@ -261,11 +263,6 @@ h1, h2, h3 {
     flex-direction: column;
     padding: $sm-padding-container;
     background-color: $color-grey;
-    h2 {
-        font-size: $h2-size;
-        padding: 2rem 0;
-        color: $color-green;
-    }
     h3 {
         font-size: $h3-size;
         color: $color-green;
@@ -288,7 +285,6 @@ h1, h2, h3 {
     h3 {
         text-align: center;
         font-size: $h3-size;
-        padding-top: 2.5rem;
         color: $color-grey;
     }
     .skills_container {
@@ -303,6 +299,8 @@ h1, h2, h3 {
             flex-direction: column;
             padding: 2rem;
             text-align: center;
+            justify-content: center;
+            align-items: center;
             color: $color-grey;
             h4 {
                 font-family: 'IBM Plex Mono', monospace;
@@ -390,7 +388,7 @@ h1, h2, h3 {
     display: block;
     background-color: $color-black;
     border-radius: $border-radius;
-    z-index: 100;
+    z-index: 5;
     a {
         color: $color-green;
         font-weight: 100;
@@ -425,7 +423,10 @@ h1, h2, h3 {
 // contact page styling
 
 .main-contact {
-   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+//    background-image: url('../images/pattern.svg');
 
 }
 
@@ -433,11 +434,17 @@ h1, h2, h3 {
     font-size: $h3-size;
     font-family: 'Bebas Neue';
     padding: $padding-container;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
     span {
         color: $color-green;
     }
     p{
         color: $color-black;
+    }
+    .message {
+        margin-top: 2rem;
     }
 }
 
@@ -450,6 +457,7 @@ h1, h2, h3 {
 .form {
     display: flex;
     flex-direction: column;
+    width: 40%;
 }
 .formContainer input, textarea {
     width: 100%;
@@ -490,25 +498,27 @@ button {
 
 @media screen and (max-width: 768px) {
     html {
-        font-size: 50%;
+        font-size: 80%;
         scroll-padding-block-start: 8rem;
     }
-
-    .menu-wrap .menu {
-        height: 15%;
+   
+    .sec-2 {
+        grid-template-areas: 'intro' 
+                             'skills'
+                             'about';
+        grid-template-rows: repeat(2, 25%) 50%;
+        grid-template-columns: 100%;
+        background-image: radial-gradient(circle, $color-yellow, $color-lightGrey);
     }
 
-    .menu ul {
-        display: flex;
-        flex-direction: column;
+    .side-container {
+         padding: $padding-container;
     }
 
-    .main-contact {
-        grid-template-areas: 'img'
-                             'form';
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr;
+    .message-me {
+        width: 90%;
     }
+   
 
     .projects_wrapper {
         flex-direction: column;
@@ -524,5 +534,10 @@ button {
 
     .formContainer input, textarea {
         font-size: 2rem;
+    }
+
+    .form {
+        width: 90%;
+        margin: 0 auto;
     }
 }

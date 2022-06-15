@@ -31,7 +31,7 @@ function About() {
                     </div>
                     <div className="skill skill3">
                       <BsBootstrap className='skill-icon'/>
-                        <h4>Bootstrap</h4>
+                        <h4>BOOTSTRAP</h4>
                         <div className="star"><AiOutlineStar/><AiOutlineStar/></div>
                     </div>
                     <div className="skill skill4">
@@ -74,7 +74,7 @@ function About() {
                 </div>
             </div>
             <div className="about">
-                <h2>About me</h2>
+                <h3>About me</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sunt alias aspernatur quibusdam molestias nulla aut, dolorem repudiandae veritatis dolore, placeat, cumque neque ipsam sit! Officiis nostrum earum cum error.</p>
                 <p>Repellendus distinctio excepturi dolore delectus recusandae aspernatur nemo, repellat impedit cupiditate, qui minus architecto voluptates earum fuga facere a possimus rerum quidem voluptatibus quibusdam dolores eligendi doloremque labore! Sit, voluptatibus.</p>
                 <h3>My mission</h3>

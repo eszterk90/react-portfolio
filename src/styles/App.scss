@@ -431,17 +431,10 @@ h1, h2, h3 {
 
 }
 
-.header {
-    text-align: left;
-    h1 {
-        font-size: $h1-size;
-    }
-
-}
-
 .message-me { 
     font-size: $h3-size;
     font-family: 'Bebas Neue';
+    padding: $padding-container;
     span {
         color: $color-green;
     }

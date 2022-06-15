@@ -3,8 +3,7 @@
 @import './mixins';
 
 body {
-    background-image: radial-gradient(circle, $color-yellow, $color-lightGrey);
-    
+    background-color: $color-grey;
 }
 
 main {
@@ -209,7 +208,7 @@ h1, h2, h3 {
 .menu-wrap .menu > div > div ul li a {
     color: $color-yellow;;
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     @include transition(color);
     &:hover {
         color: $color-green;

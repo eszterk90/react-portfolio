@@ -103,52 +103,12 @@ h1, h2, h3 {
     display: none;
 }
 
-@media (max-width: 768px) {
-    nav {
-        background-color: $color-grey;
-    }
-    .NavBar .navigation {
-        display: none;
-    }
-    .NavBar .mobile-nav {
-        display: flex;
-        align-items: center;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 10;
-    }
-
-    .NavBar .mobile-nav .hamburger {
-        cursor: pointer;
-        padding: 0.5rem;
-    }
-    .NavBar nav ul {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 40px;
-        left: 0;
-        width: 100%;
-        border-top: 2px solid white;
-        background-color: $color-grey;
-    }
-
-    .NavBar {
-        opacity: 1;
-        background-color: $color-grey;
-    }
-    nav .mobile-nav ul li a:hover {
-        border-bottom: none;
-        color: $color-yellow;
-    }
-}
-
 
 // side_container styling 
 
 .sec-2 {
     display: grid;
+    padding-top: 4rem;
     width: 100%;
     grid-template-areas: 'intro skills'
                          'about about';
@@ -208,7 +168,7 @@ h1, h2, h3 {
     h3 {
         text-align: center;
         font-size: $h3-size;
-        color: $color-grey;
+        color: $color-black;
     }
     .skills_container {
         display: grid;
@@ -419,10 +379,51 @@ button {
 
 // mobile version
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 990px) {
     html {
         font-size: 80%;
         scroll-padding-block-start: 8rem;
+    }
+
+    //navbar hamburger
+
+    nav {
+        background-color: $color-grey;
+    }
+    .NavBar .navigation {
+        display: none;
+    }
+    .NavBar .mobile-nav {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 10;
+    }
+
+    .NavBar .mobile-nav .hamburger {
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+    .NavBar nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        border-top: 2px solid white;
+        background-color: $color-grey;
+    }
+
+    .NavBar {
+        opacity: 1;
+        background-color: $color-grey;
+    }
+    nav .mobile-nav ul li a:hover {
+        border-bottom: none;
+        color: $color-yellow;
     }
    
     .sec-2 {
@@ -434,8 +435,18 @@ button {
         background-image: radial-gradient(circle, $color-yellow, $color-lightGrey);
     }
 
-    .side-container {
-         flex-direction: column;
+    .side_container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .intro h3 {
+            text-align: center;
+            padding: 1rem;
+        }
+        .img_container {
+            padding: 1rem 0;
+            margin-top: 1rem;
+        }
     }
 
     .skills {

@@ -426,6 +426,11 @@ button {
         color: $color-yellow;
     }
    
+
+    .developer-text {
+        display: none;
+    }
+    
     .sec-2 {
         grid-template-areas: 'intro' 
                              'skills'

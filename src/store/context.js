@@ -90,11 +90,18 @@ const validate = (values) => {
     setUserMessage({name: '', email: '', message: ''})
     setSubmit(false);
   }
+
+
+  // navbar
+
+  const [open, setOpen] = useState(false);
+
+
       return (
           <Context.Provider value={{
               names, name, setName, onMouseEnter, randomize, onMouseLeave, text, setText,
               
-              userMessage, setUserMessage, allMessages, setAllMessages, submit, setSubmit, formErrors, setFormErrors, onInputChange, onSubmitMessage, validate, handleResubmit, useEffect
+              userMessage, setUserMessage, allMessages, setAllMessages, submit, setSubmit, formErrors, setFormErrors, onInputChange, onSubmitMessage, validate, handleResubmit, useEffect, open, setOpen
             }}>{props.children}
           </Context.Provider>
       )

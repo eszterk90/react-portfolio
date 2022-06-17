@@ -18,8 +18,9 @@ main {
 
 .name-container {
     width: 100%;
-    height: 100%;
+    height: 90vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     h1 {
@@ -30,14 +31,14 @@ main {
 
  .regular-style {
     width: 100%;
-    height: 90vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center; 
 }
 
 .developer-text {
-    align-self: flex-end;
+    align-self: center;
     margin: 0 2rem;
     animation: fadein 2s;
     transition: opacity 2s ease-in;
@@ -67,158 +68,79 @@ h1, h2, h3 {
 
 /* navbar styling */
 
-.btn {
-    display: inline-block;
-    border: none;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    margin-top: 1rem;
-    text-decoration: none;
-    transition: opacity 1s ease-out;
-    &:hover {
-        opacity: 0.7;
-    }
-}
 
-.menu-wrap {
+.NavBar .navigation {
+    display: flex;
+    align-items: center;
+    background-color: $color-grey;
+    height: 10vh;
+    width: 100%;
     position: fixed;
     top: 0;
-    left: 0;
     z-index: 10;
-    .menu {
+}
+
+
+.NavBar nav ul li {
+    display: inline-block;
+    margin: 1.5vw;
+    padding-top: 0.5rem;
+}
+
+.NavBar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Bebas Neue';
+    letter-spacing: 5px;
+}
+
+.NavBar nav ul li a:hover {
+    color: $color-green;
+}
+
+
+.NavBar .mobile-nav {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    nav {
         background-color: $color-grey;
     }
-    .toggler {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        cursor: pointer;
-        width: 5rem;
-        height: 5rem;
-        opacity: 0;
+    .NavBar .navigation {
+        display: none;
     }
-    .hamburger {
-        @include flex-center; 
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        width: 5rem;
-        height: 5rem;
-        padding: 1rem;
-    }
-}
-
-// hamburger line (middle)
-
-.menu-wrap .hamburger > div {
-    @include flex-center;
-    position: relative;
-    width: 100%;
-    height: 0.2rem;
-    background-color: $color-green;
-    transition: all 0.4s ease-in;
-    &::before, &::after {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        top: -1rem;
+    .NavBar .mobile-nav {
+        display: flex;
+        align-items: center;
+        position: fixed;
         width: 100%;
-        height: 0.2rem;
-        background: inherit;
+        top: 0;
+        z-index: 10;
     }
-    &::after {
-        top: 1rem;
+
+    .NavBar .mobile-nav .hamburger {
+        cursor: pointer;
+        padding: 0.5rem;
     }
-}
-
-// toggler animate 
-
-.menu-wrap .toggler:checked + .hamburger > div {
-    transform: rotate(135deg);
-}
-
-// turn line into X 
-
-.menu-wrap .toggler:checked + .hamburger > div::before, 
-.menu-wrap .toggler:checked + .hamburger > div::after {
-    top: 0;
-    transform: rotate(90deg);
-}
-
-// rotate on hover when checked 
-.menu-wrap .toggler:checked:hover + .hamburger > div {
-    transform: rotate(225deg);
-}
-
-// show menu 
-
-.menu-wrap .toggler:checked ~ .menu {
-    visibility: visible;
-}
-
-.menu-wrap .toggler:checked ~ .menu > div {
-    transform: scale(1);
-    transition-duration: $menu-speed;
-}
-
-.menu-wrap .toggler:checked ~ .menu > div > div {
-    opacity: 1;
-    @include transition(opacity);
-}
-
-.menu-wrap .menu {
-    @include flex-center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10%;
-    visibility: hidden;
-    overflow: hidden;
-}
-
-.menu-wrap .menu > div {
-    width: 100vw;
-    height: 100vh;
-    @include flex-center;
-    flex: none;
-    transform: scale(0);
-    @include transition(all);
-}
-
-.menu-wrap .menu > div > div {
-    text-align: center;
-    max-width: 90%;
-    max-height: 100%;
-    @include transition(opacity);
-}
-
-
-.menu-wrap .menu > div > div ul li {
-    list-style-type: none;
-    font-size: 1.5rem;
-    padding: 1rem;
-    display: inline-block;
-    line-height: 1.5rem;
-}
-
-.menu-wrap .menu > div > div ul li a {
-    color: $color-yellow;;
-    text-decoration: none;
-    font-size: 1.5rem;
-    @include transition(color);
-    &:hover {
-        color: $color-green;
+    .NavBar nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        border-top: 2px solid white;
+        background-color: $color-grey;
     }
-}
 
-#home {
-    color: $color-yellow;
-    &:hover {
-        color: $color-green;
+    .NavBar {
+        opacity: 1;
+        background-color: $color-grey;
+    }
+    nav .mobile-nav ul li a:hover {
+        border-bottom: none;
+        color: $color-yellow;
     }
 }
 
@@ -245,6 +167,7 @@ h1, h2, h3 {
         width: 15rem;
         border-radius: 50%;
         margin: 0 2rem;
+        z-index: -5;
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
     }
@@ -512,7 +435,11 @@ button {
     }
 
     .side-container {
-         padding: $padding-container;
+         flex-direction: column;
+    }
+
+    .skills {
+        align-self: center;
     }
 
     .message-me {

@@ -310,13 +310,30 @@ h1, h2, h3 {
    flex-direction: column;
    justify-content: center;
 //    background-image: url('../images/pattern.svg');
+}
+
+.msg-write {
+    padding: $padding-container;
+}
+
+.msg-submit {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .home {
+        text-decoration: none;
+        color: $color-black;
+        font-family: 'Bebas Neue';
+        letter-spacing: 0.5rem;
+    }
 
 }
 
 .message-me { 
     font-size: $h3-size;
     font-family: 'Bebas Neue';
-    padding: $padding-container;
     width: 50%;
     margin: 0 auto;
     text-align: center;
@@ -340,7 +357,8 @@ h1, h2, h3 {
 .form {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 70%;
+    margin: 0 auto;
 }
 .formContainer input, textarea {
     width: 100%;
@@ -349,14 +367,14 @@ h1, h2, h3 {
 } 
 
 .formContainer input {
-    height: 50px;
+    height: 30px;
 }
 .formContainer textarea{
     height: 200px;
 }
 
 .formContainer label {
-    font-size: 1.3rem
+    font-size: 1rem
 }
 button {
     text-decoration: none;
@@ -425,12 +443,12 @@ button {
         border-bottom: none;
         color: $color-yellow;
     }
-   
+
 
     .developer-text {
         display: none;
     }
-    
+
     .sec-2 {
         grid-template-areas: 'intro' 
                              'skills'
@@ -457,10 +475,6 @@ button {
     .skills {
         align-self: center;
     }
-
-    .message-me {
-        width: 90%;
-    }
    
 
     .projects_wrapper {
@@ -471,12 +485,12 @@ button {
         width: 90%;
     }
 
-    .formContainer label {
-        font-size: 1.5rem
+    .msg-write {
+        height: 100vh;
     }
 
-    .formContainer input, textarea {
-        font-size: 2rem;
+    .message-me {
+        width: 90%;
     }
 
     .form {

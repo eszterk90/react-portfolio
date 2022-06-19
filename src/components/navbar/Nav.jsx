@@ -1,5 +1,4 @@
 import React from 'react'
-// import {NavLink} from 'react-router-dom'
 import MobileNavigation from './MobileNavigation'
 import Navigation from './Navigation'
 import Context from '../../store/context'

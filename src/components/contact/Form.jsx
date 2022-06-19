@@ -11,7 +11,7 @@ function Form() {
   return (
     <div className='formContainer'>
     {Object.keys(formErrors).length === 0 && submit ? (
-        <div className='msg-submit'><h1>Thank you for your message!</h1><Link to='/' className='home'><BsArrowLeft/> Home</Link></div>
+        <div className='msg-submit'><h3>Thank you for your message!</h3><Link to='/' className='home'><BsArrowLeft/> Home</Link></div>
       ) : 
       (<div className='msg-write'>
         <div className='message-me'>

@@ -502,12 +502,16 @@ main {
   
     // contact section
 
-    .message-me {
-        width: 90%;
+    .formContainer .msg-write .message-me {
+        margin: 0;
+        width: 100%;
     }
 
-    .form {
-        width: 90%;
-        margin: 0 auto;
+    .formContainer .msg-write .form {
+        margin: 0;
+        width: 100%;
     }
+
 }
+
+    

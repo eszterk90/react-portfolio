@@ -15,7 +15,7 @@ function Form() {
       ) : 
       (<div className='msg-write'>
         <div className='message-me'>
-          <TextAnimation/>
+          <TextAnimation className='text-animation'/>
         </div>
         <form onSubmit={onSubmitMessage} className='form'>
           <div className='inputContainer'>

@@ -10,7 +10,6 @@ const MobileNavigation = () => {
     const {open, setOpen} = useContext(Context);
 
     const hamburger =  <AiOutlineMenu className='hamburger' size='40px' color='white' onClick={() => setOpen(!open)}/>
-   
     const closeBtn =  <AiOutlineClose className='hamburger' size='40px' color='white' onClick={() => setOpen(!open)}/>
    
 

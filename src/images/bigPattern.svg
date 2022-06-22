@@ -1,9 +1,9 @@
-<svg width="100" height="100" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.5" y="0.5" width="899" height="899" fill="transparent"/>
-<rect x="0.5" y="0.5" width="899" height="899" fill="transparent" fill-opacity="0"/>
-<rect x="0.5" y="0.5" width="899" height="899" fill="transparent" fill-opacity="0"/>
-<rect x="0.5" y="0.5" width="899" height="899" fill="transparent" fill-opacity="0"/>
-<rect x="0.5" y="0.5" width="899" height="899" fill="transparent" fill-opacity="0"/>
+<svg width="500" height="500" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="1439" height="899" fill="#transparent"/>
+<rect x="0.5" y="0.5" width="1439" height="899" fill="transparent" fill-opacity="0.2"/>
+<rect x="0.5" y="0.5" width="1439" height="899" fill="transparent" fill-opacity="0.2"/>
+<rect x="0.5" y="0.5" width="1439" height="899" fill="transparent" fill-opacity="0.2"/>
+<rect x="0.5" y="0.5" width="1439" height="899" fill="transparent" fill-opacity="0.2"/>
 <g clip-path="url(#clip0_16_91176)">
 <rect x="360" y="116" width="719" height="668" fill="transparent"/>
 <path d="M678.205 593.205C413.564 126.841 408.985 -5.62216 987.205 284.205" stroke="url(#paint0_linear_16_91176)" stroke-width="6" stroke-linecap="round"/>
@@ -29,7 +29,7 @@
 <path d="M1023.56 287.558C978.443 444.166 924.952 518.559 714.559 596.558" stroke="url(#paint19_linear_16_91176)" stroke-width="6" stroke-linecap="round"/>
 </g>
 </g>
-<rect x="360.25" y="116.25" width="718.5" height="667.5" stroke="black" stroke-opacity="0.31" stroke-width="0.5"/>
+<rect x="360.25" y="116.25" width="718.5" height="667.5" stroke="transparent" stroke-opacity="0.31" stroke-width="0.5"/>
 <rect x="0.5" y="0.5" width="1439" height="899" stroke="transparent"/>
 <rect x="0.5" y="0.5" width="1439" height="899" stroke="transparent" stroke-opacity="0.2"/>
 <defs>
@@ -114,10 +114,10 @@
 <stop offset="1" stop-color="#D7E9A1"/>
 </linearGradient>
 <clipPath id="clip0_16_91176">
-<rect x="360" y="116" width="719" height="668" fill="none"/>
+<rect x="360" y="116" width="719" height="668" fill="transparent"/>
 </clipPath>
 <clipPath id="clip1_16_91176">
-<rect width="660" height="614" fill="none" transform="translate(1028 708) rotate(-180)"/>
+<rect width="660" height="614" fill="transparent" transform="translate(1028 708) rotate(-180)"/>
 </clipPath>
 </defs>
 </svg>

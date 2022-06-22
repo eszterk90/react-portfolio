@@ -8,7 +8,7 @@ const textArray = 'Drop'.split('');
 
 
   return (
-    <Wrapper className='message'><p>Let's get in touch! {textArray.map((letter, index) => <span key={index}>{letter}</span>)} me a message if you want to say hi!</p></Wrapper>
+    <Wrapper className='message'><p>{textArray.map((letter, index) => <span key={index}>{letter}</span>)} me a message if you want to say hi!</p></Wrapper>
   )
 }
 

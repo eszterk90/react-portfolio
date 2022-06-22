@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bigelow+Rules&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import './variables';
 @import './mixins';
 
@@ -12,6 +13,10 @@ html, body, #root {
 
 body {
     background-color: $color-grey;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
     font-family: 'Bebas Neue';
 }
 
@@ -21,8 +26,12 @@ main {
     background-image: radial-gradient(circle, $color-yellow, $color-lightGrey);
 }
 
-.home-container {
+.desktop-home {
     height: 100vh;
+}
+
+.mobile-home {
+    display: none;
 }
 
 .name-container {
@@ -41,25 +50,22 @@ main {
  .regular-style {
     width: 100%;
     height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+    span h1 {
+        padding: 0 10px;
+    } 
 }
 
 .developer-text {
     align-self: center;
     margin: 0 2rem;
     animation: fadein 2s;
-    transition: opacity 2s ease-in;
+    transition: transform 2s ease-in-out;
     a {
         text-decoration: none;
         color: $color-black;
         & :hover {
-            color: $color-green;
             transition-duration: 2s;
-            opacity: 1;
-            text-shadow: 2px 2px 3px $color-black;
-            text-shadow: none;
+            transform: scale(1.1);
         }
         h3 {
             font-size: $h3-size;
@@ -78,12 +84,32 @@ main {
 .NavBar .navigation {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: $color-grey;
     height: 10vh;
     width: 100%;
     position: fixed;
     top: 0;
     z-index: 10;
+    .logo {
+        animation: rotation 5s linear infinite;
+        &:hover {
+            animation: scale 2s linear;
+        }
+    }
+}
+
+@keyframes rotation {
+    from {transform: rotate(0deg)};
+    to {transform: rotate(360deg)};
+}
+
+@keyframes scale {
+    0% {transform: scale(1)};
+    25% {transform: scale(1.25)};
+    50% {transform: scale(1.5)};
+    75% {transform: scale(1.25)};
+    100% {transform: scale(1)};
 }
 
 
@@ -112,7 +138,6 @@ main {
 .sec-2 {
     display: grid;
     padding-top: 4rem;
-    width: 100%;
     grid-template-areas: 'intro skills'
                          'about about';
     grid-template-rows: 40% 60%;
@@ -125,6 +150,7 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-bottom: 3px solid $color-black;
     //padding: $padding-container;
     .img_container img {
         width: 15rem;
@@ -146,6 +172,9 @@ main {
 .about {
     grid-area: about;
     display: flex;
+    border-top: 3px solid;
+    margin-top: 3px;
+    border-image: radial-gradient(circle, $color-yellow, $color-lightGrey);
     flex-direction: column;
     padding: $sm-padding-container;
     background-color: $color-grey;
@@ -166,6 +195,7 @@ main {
     grid-area: skills;
     width: 100%;
     padding: $sm-padding-container;
+    border-bottom: 3px solid $color-black;
     display: flex;
     flex-direction: column;
     h3 {
@@ -188,6 +218,11 @@ main {
             justify-content: center;
             align-items: center;
             color: $color-grey;
+            transition: transform 0.5s linear;
+            &:hover {
+                transform: scale(1.1);
+                color: $color-lightGrey;
+            }
             h4 {
                 font-family: 'IBM Plex Mono', monospace;
                 font-weight: 300;
@@ -215,9 +250,10 @@ main {
         color: $color-yellow;
         text-align: center;
     }
-    .project_list a {
+    .project_list button {
         @include anchor;
         color: $color-yellow;
+        background-color: $color-grey;
         font-size: 2rem;
         display: block;
         text-align: center;
@@ -310,11 +346,43 @@ main {
 
 .main-contact {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: 'form contact';
+    grid-template-rows: 100%;
+    grid-template-columns: 0.5fr 0.5fr;
+    background-color: $color-grey;
+}
+
+.info-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-//    background-image: url('../images/pattern.svg');
+    align-items: center;
+    justify-content: flex-start;
+    padding: $padding-container;
+    .get-in-touch {
+        margin-top: 2rem;
+        color: $color-yellow;
+        h4 {
+            font-size: $h4-size;
+        } 
+    }
+    .contact-list {
+        color: $color-yellow;
+        .contact-logo {
+            display: flex;
+            justify-content: center;
+            font-size: 1.6rem;
+            a {
+                text-decoration: none;
+                color: $color-yellow;
+                margin: 0 1rem;
+            }
+            .logo {
+                animation: rotation 5s linear infinite; 
+            }
+        }
+    }
 }
 
 .formContainer {
@@ -325,16 +393,16 @@ main {
     .msg-write {
         padding: $padding-container;
         .message-me { 
-            font-size: $h3-size;
+            font-size: $h4-size;
             font-family: 'Bebas Neue';
-            width: 50%;
+            width: 100%;
             margin: 0 auto;
             text-align: center;
             span {
                 color: $color-green;
             }
             p{
-                color: $color-black;
+                color: $color-yellow;
             }
             .message {
                 margin-top: 2rem;
@@ -343,7 +411,7 @@ main {
         .form {
             display: flex;
             flex-direction: column;
-            width: 70%;
+            width: 100%;
             margin: 0 auto;
             input, textarea {
                 width: 100%;
@@ -357,7 +425,8 @@ main {
                 height: 200px;
             }
             label {
-                font-size: 1rem
+                font-size: 1rem;
+                color: white;
             }
             button {
                 text-decoration: none;
@@ -369,7 +438,7 @@ main {
                 text-align: center;
                 font-weight: 100;
                 padding: 0.8rem 1.5rem;
-                border: 1px solid transparent;
+                border: 1px solid $color-yellow;
                 width: fit-content;
                 border-radius: 0.3rem;
                 &:hover {
@@ -388,10 +457,11 @@ main {
         h3 {
             text-align: center;
             font-size: $h3-size;
+            color: $color-yellow;
         }
         .home {
             text-decoration: none;
-            color: $color-black;
+            color: $color-yellow;
             font-family: 'Bebas Neue';
             letter-spacing: 0.5rem;
             &:hover {
@@ -402,12 +472,28 @@ main {
     }
 }
 
+// footer {
+//     padding-right: 10px;
+//     width: 100%;
+//     text-align: right;
+//     background-color: transparent;
+// }
+
 // mobile screen version
 
 @media screen and (max-width: 990px) {
     html {
         font-size: 80%;
         scroll-padding-block-start: 8rem;
+    }
+
+    .mobile-home {
+        display: block;
+        height: 100vh; 
+    }
+
+    .desktop-home {
+        display: none;
     }
 
     //navbar hamburger
@@ -501,6 +587,19 @@ main {
 
   
     // contact section
+    .main-contact {
+        grid-template-areas: 'form' 
+                             'contact';
+        grid-template-rows: 80% 20%;
+        grid-template-columns: 1fr;
+    }
+
+    .info-container {
+        padding: 0;
+    }
+    .logo {
+        display: none;
+    }
 
     .formContainer .msg-write .message-me {
         margin: 0;

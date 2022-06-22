@@ -1,19 +1,21 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useReducer} from 'react';
 
 const names = [
-    { value: "E", top: '50%', right: '80%' },
-    { value: "S", top: '50%', right: '75%' },
-    { value: "Z", top: '50%', right: '70%' },
-    { value: "T", top: '50%', right: '65%' },
-    { value: "E", top: '50%', right: '60%' },
-    { value: "R", top: '50%', right: '55%' },
-    { value: " ", top: '50%', right: '50%' },
-    { value: "K", top: '50%', right: '45%' },
-    { value: "A", top: '50%', right: '40%' },
-    { value: "D", top: '50%', right: '35%' },
-    { value: "A", top: '50%', right: '30%' },
-    { value: "R", top: '50%', right: '25%' }
+    { value: "E", top: '50%', right: '75%' },
+    { value: "S", top: '50%', right: '70%' },
+    { value: "Z", top: '50%', right: '65%' },
+    { value: "T", top: '50%', right: '60%' },
+    { value: "E", top: '50%', right: '55%' },
+    { value: "R", top: '50%', right: '50%' },
+    { value: " ", top: '50%', right: '45%' },
+    { value: "K", top: '50%', right: '40%' },
+    { value: "A", top: '50%', right: '35%' },
+    { value: "D", top: '50%', right: '30%' },
+    { value: "A", top: '50%', right: '25%' },
+    { value: "R", top: '50%', right: '20%' }
   ];
+
+ 
 
 
 const Context = React.createContext();
@@ -22,30 +24,59 @@ export function ContextProvider(props) {
 
 const [name, setName] = useState(names);
 
+
 const [text, setText] = useState(false);
 
 const randomize = () => Math.floor(Math.random() * 500);
+ 
+  // desktop home
 
-    const onMouseEnter = () => {
-        setName(
-          names.map((name) => {
-            return {
-              ...name,
-              top: randomize(),
-              left: randomize(),
-            };
-          })
-        );
-      };
-      const onMouseLeave = () => {
-        setName(names);
-      };
+  const onMouseEnter = () => {
+    setName(
+      names.map((name) => {
+        return {
+          ...name,
+          top: randomize(),
+          left: randomize(),
+        };
+      })
+    );
+  };
 
-      useEffect(() => {
-        setInterval(() => {
-          setText(true);
-        }, 3000)
-      }, [])
+const onMouseLeave = () => {
+  setName(names);
+};
+
+useEffect(() => {
+  setInterval(() => {
+    setText(true);
+  }, 3000)
+}, [])
+
+
+// mobile home
+
+const [count, setCount] = useState(0);
+
+const onClickHandler = () => {
+  setCount((prev) => prev + 1);
+  if(count % 2 === 0) {
+    setName(
+      names.map((name) => {
+        return {
+          ...name,
+          top: randomize(),
+          left: randomize(),
+        };
+      })
+    );
+    console.log(count)
+  }
+  else {
+    setName(names);
+    console.log(count)
+  }
+}
 
       // Form Component
 
@@ -96,10 +127,17 @@ const validate = (values) => {
 
   const [open, setOpen] = useState(false);
 
+  // projects toggled
+
+  const [active, setActive] = useState(false);
+
+  const toggleProjects = () => {
+    setActive(!active)
+  }
 
       return (
           <Context.Provider value={{
-              names, name, setName, onMouseEnter, randomize, onMouseLeave, text, setText,
+              names, name, setName, onMouseEnter, randomize, onMouseLeave, text, setText, count, onClickHandler, toggleProjects, active,
               
               userMessage, setUserMessage, allMessages, setAllMessages, submit, setSubmit, formErrors, setFormErrors, onInputChange, onSubmitMessage, validate, handleResubmit, useEffect, open, setOpen
             }}>{props.children}

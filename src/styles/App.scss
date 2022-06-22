@@ -12,6 +12,7 @@ html, body, #root {
 
 body {
     background-color: $color-grey;
+    font-family: 'Bebas Neue';
 }
 
 main {
@@ -53,12 +54,15 @@ main {
     a {
         text-decoration: none;
         color: $color-black;
-        :hover {
+        & :hover {
             color: $color-green;
             transition-duration: 2s;
             opacity: 1;
             text-shadow: 2px 2px 3px $color-black;
             text-shadow: none;
+        }
+        h3 {
+            font-size: $h3-size;
         }
     }
 }
@@ -66,12 +70,6 @@ main {
 @keyframes fadein {
     from { opacity: 0;}
     to { opacity: 1;}
-}
-
-
-h1, h2, h3 {
-    font-size: 4rem;
-    font-family: 'Bebas Neue';
 }
 
 /* navbar styling */
@@ -93,26 +91,23 @@ h1, h2, h3 {
     display: inline-block;
     margin: 1.5vw;
     padding-top: 0.5rem;
+    a {
+        text-decoration: none;
+        color: white;
+        font-family: 'Bebas Neue';
+        letter-spacing: 5px;
+        &:hover {
+            color: $color-green;
+        }
+    } 
 }
-
-.NavBar nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-family: 'Bebas Neue';
-    letter-spacing: 5px;
-}
-
-.NavBar nav ul li a:hover {
-    color: $color-green;
-}
-
 
 .NavBar .mobile-nav {
     display: none;
 }
 
 
-// side_container styling 
+// about section
 
 .sec-2 {
     display: grid;
@@ -208,7 +203,7 @@ h1, h2, h3 {
     }
 }
 
-// projects styling
+// projects section
 
 .sec-3 {
     background-color: $color-grey;
@@ -322,93 +317,92 @@ h1, h2, h3 {
 //    background-image: url('../images/pattern.svg');
 }
 
-.msg-write {
-    padding: $padding-container;
-}
-
-.msg-submit {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    h3 {
-        text-align: center;
-    }
-    .home {
-        text-decoration: none;
-        color: $color-black;
-        font-family: 'Bebas Neue';
-        letter-spacing: 0.5rem;
-    }
-
-}
-
-.message-me { 
-    font-size: $h3-size;
-    font-family: 'Bebas Neue';
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-    span {
-        color: $color-green;
-    }
-    p{
-        color: $color-black;
-    }
-    .message {
-        margin-top: 2rem;
-    }
-}
-
 .formContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-} 
-.form {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin: 0 auto;
+    .msg-write {
+        padding: $padding-container;
+        .message-me { 
+            font-size: $h3-size;
+            font-family: 'Bebas Neue';
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            span {
+                color: $color-green;
+            }
+            p{
+                color: $color-black;
+            }
+            .message {
+                margin-top: 2rem;
+            }
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            margin: 0 auto;
+            input, textarea {
+                width: 100%;
+                border: 1px solid transparent;
+                border-radius: 0.3rem;
+            }
+            input {
+                height: 30px;
+            }
+            textarea {
+                height: 200px;
+            }
+            label {
+                font-size: 1rem
+            }
+            button {
+                text-decoration: none;
+                align-self: center;
+                color: $color-yellow;
+                background-color: $color-black;
+                font-size: 1.5rem;
+                display: block;
+                text-align: center;
+                font-weight: 100;
+                padding: 0.8rem 1.5rem;
+                border: 1px solid transparent;
+                width: fit-content;
+                border-radius: 0.3rem;
+                &:hover {
+                    background-color: $color-grey;
+                }
+            } 
+        }
+    }
+    .msg-submit {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: $padding-container;
+        h3 {
+            text-align: center;
+            font-size: $h3-size;
+        }
+        .home {
+            text-decoration: none;
+            color: $color-black;
+            font-family: 'Bebas Neue';
+            letter-spacing: 0.5rem;
+            &:hover {
+                color: $color-green;
+            }
+        }
+    
+    }
 }
-.formContainer input, textarea {
-    width: 100%;
-    border: 1px solid transparent;
-    border-radius: 0.3rem;
-} 
 
-.formContainer input {
-    height: 30px;
-}
-.formContainer textarea{
-    height: 200px;
-}
-
-.formContainer label {
-    font-size: 1rem
-}
-button {
-    text-decoration: none;
-    align-self: center;
-    color: $color-yellow;
-    background-color: $color-black;
-    font-size: 1.5rem;
-    display: block;
-    text-align: center;
-    font-weight: 100;
-    padding: 0.8rem 1.5rem;
-    border: 1px solid transparent;
-    width: fit-content;
-    border-radius: 0.3rem;
-} button:hover {
-    background-color: $color-grey;
-}
-
-
-
-// mobile version
+// mobile screen version
 
 @media screen and (max-width: 990px) {
     html {
@@ -421,6 +415,12 @@ button {
     nav {
         background-color: $color-grey;
     }
+
+    .NavBar {
+        opacity: 1;
+        background-color: $color-grey;
+    }
+
     .NavBar .navigation {
         display: none;
     }
@@ -431,12 +431,12 @@ button {
         width: 100%;
         top: 0;
         z-index: 10;
+        .hamburger {
+            cursor: pointer;
+            padding: 0.5rem;
+        }
     }
 
-    .NavBar .mobile-nav .hamburger {
-        cursor: pointer;
-        padding: 0.5rem;
-    }
     .NavBar nav ul {
         display: flex;
         flex-direction: column;
@@ -448,19 +448,19 @@ button {
         background-color: $color-grey;
     }
 
-    .NavBar {
-        opacity: 1;
-        background-color: $color-grey;
-    }
+   
     nav .mobile-nav ul li a:hover {
         border-bottom: none;
         color: $color-yellow;
     }
 
+    // home section
 
     .developer-text {
         display: none;
     }
+
+    // about section
 
     .sec-2 {
         grid-template-areas: 'intro' 
@@ -489,6 +489,7 @@ button {
         align-self: center;
     }
    
+    // project section
 
     .projects_wrapper {
         flex-direction: column;
@@ -498,9 +499,8 @@ button {
         width: 90%;
     }
 
-    // .msg-write {
-    //     // height: 100vh;
-    // }
+  
+    // contact section
 
     .message-me {
         width: 90%;

@@ -6,10 +6,7 @@ function Contact() {
 
   return (
     <Wrapper className='main-contact'>
-    <div>
       <Form/>
-    </div>
-      
     </Wrapper>
   )
 }

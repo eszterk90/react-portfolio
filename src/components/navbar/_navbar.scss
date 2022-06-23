@@ -1,0 +1,56 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+/* navbar styling */
+
+
+.NavBar .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-grey;
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    .logo {
+        animation: rotation 5s linear infinite;
+        &:hover {
+            animation: scale 2s linear;
+        }
+    }
+}
+
+@keyframes rotation {
+    from {transform: rotate(0deg)};
+    to {transform: rotate(360deg)};
+}
+
+@keyframes scale {
+    0% {transform: scale(1)};
+    25% {transform: scale(1.25)};
+    50% {transform: scale(1.5)};
+    75% {transform: scale(1.25)};
+    100% {transform: scale(1)};
+}
+
+
+.NavBar nav ul li {
+    display: inline-block;
+    margin: 1.5vw;
+    padding-top: 0.5rem;
+    a {
+        text-decoration: none;
+        color: white;
+        font-family: 'Bebas Neue';
+        letter-spacing: 5px;
+        &:hover {
+            color: $color-green;
+        }
+    } 
+}
+
+.NavBar .mobile-nav {
+    display: none;
+}

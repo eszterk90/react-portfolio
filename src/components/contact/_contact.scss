@@ -1,0 +1,132 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// contact page styling
+
+.main-contact {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: 'form contact';
+    grid-template-rows: 100%;
+    grid-template-columns: 0.5fr 0.5fr;
+    background-color: $color-grey;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: $padding-container;
+    .get-in-touch {
+        margin-top: 2rem;
+        color: $color-yellow;
+        h4 {
+            font-size: $h4-size;
+        } 
+    }
+    .contact-list {
+        color: $color-yellow;
+        .contact-logo {
+            display: flex;
+            justify-content: center;
+            font-size: 1.6rem;
+            a {
+                text-decoration: none;
+                color: $color-yellow;
+                margin: 0 1rem;
+            }
+            .logo {
+                animation: rotation 5s linear infinite; 
+            }
+        }
+    }
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .msg-write {
+        padding: $padding-container;
+        .message-me { 
+            font-size: $h4-size;
+            font-family: 'Bebas Neue';
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            span {
+                color: $color-green;
+            }
+            p{
+                color: $color-yellow;
+            }
+            .message {
+                margin-top: 2rem;
+            }
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto;
+            input, textarea {
+                width: 100%;
+                border: 1px solid transparent;
+                border-radius: 0.3rem;
+            }
+            input {
+                height: 30px;
+            }
+            textarea {
+                height: 200px;
+            }
+            label, p {
+                font-size: 1rem;
+                color: white;
+            }
+            button {
+                text-decoration: none;
+                align-self: center;
+                color: $color-yellow;
+                background-color: $color-black;
+                font-size: 1.5rem;
+                display: block;
+                text-align: center;
+                font-weight: 100;
+                padding: 0.8rem 1.5rem;
+                border: 1px solid $color-yellow;
+                width: fit-content;
+                border-radius: 0.3rem;
+                &:hover {
+                    background-color: $color-grey;
+                }
+            } 
+        }
+    }
+    .msg-submit {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: $padding-container;
+        h3 {
+            text-align: center;
+            font-size: $h3-size;
+            color: $color-yellow;
+        }
+        .home {
+            text-decoration: none;
+            color: $color-yellow;
+            font-family: 'Bebas Neue';
+            letter-spacing: 0.5rem;
+            &:hover {
+                color: $color-green;
+            }
+        }
+    
+    }
+}

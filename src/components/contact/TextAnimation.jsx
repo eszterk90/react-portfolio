@@ -11,18 +11,16 @@ const textArray = 'Drop'.split('');
     <Wrapper className='message'><p>{textArray.map((letter, index) => <span key={index}>{letter}</span>)} me a message if you want to say hi!</p></Wrapper>
   )
 }
-
 const animation = keyframes`
     0% {opacity: 0; transform: translateY(-100px) skewY(10deg) skewX(10deg) rotateZ(30deg); filter: blur(10px);}
     25% {opacity: 1; transform: translateY(0) skewY(0) skewX(0) rotateZ(0); filter: blur(0);}
     75% {opacity: 1; transform: translateY(0) skewY(0) skewX(0) rotateZ(0); filter: blur(0);}
-    100% {opacity: 0; transform: translateY(-100px) skewY(10deg) skewX(10deg) rotateZ(30deg); filter: blur(10px); }
-`
+    100% {opacity: 0; transform: translateY(-100px) skewY(10deg) skewX(10deg) rotateZ(30deg); filter: blur(10px); } `
 
 const Wrapper = styled.span `
     display: inline-block;
    
-   span {
+   /* span {
     display: inline-block;
     opacity: 0;
     animation-name: ${animation};
@@ -42,7 +40,7 @@ const Wrapper = styled.span `
    }
    span:nth-child(4) {
        animation-delay: 0.4s;
-   }
+   } */
 `
 
 export default TextAnimation

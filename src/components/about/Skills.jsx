@@ -4,65 +4,95 @@ import {DiCss3Full, DiSass, DiJavascript1, DiReact, DiPython} from 'react-icons/
 import {BsBootstrap} from 'react-icons/bs'
 import {FaNode} from 'react-icons/fa' 
 
-const skills = ['HTML', 'CSS', 'BOOTSTRAP', 'SCSS', 'JAVASCRIPT', 'REACT', 'NODE', 'PYTHON']
+// const skills = [
+//   {skill: 'HTML',
+//    level: 3,
+//    icon: '<AiOutlineHtml5/>',
+//   },
+
+//   {skill: 'CSS',
+//   level: 3,
+//   icon: '<DiCss3Full/>',
+//   },
+
+//   {skill: 'BOOTSTRAP',
+//   level: 2,
+//   icon: '<BsBootstrap/>',
+//   },
+
+//   {skill: 'SCSS',
+//   level: 2,
+//   icon: '<DiSass/>',
+//   },
+
+//   {skill: 'JAVASCRIPT',
+//   level: 2,
+//   icon: '<DiJavascript1/>',
+//   },
+
+//   {skill: 'REACT',
+//   level: 2,
+//   icon: '<DiReact/>',
+//   },
+
+//   {skill: 'NODE',
+//   level: 1,
+//   icon: '<FaNode/>',
+//   },
+
+//   {skill: 'PYTHON',
+//   level: 1,
+//   icon: '<DiPython/>',
+//   },
+// ]
 
 function Skills() {
   return (
     <div className="skills" id="skills">
-                <h3>Skills</h3>
-                <div className="skills_container">
-                    <div className="skill skill1">
-                      <AiOutlineHtml5 className='skill-icon'/>
-                        <h4>HTML</h4>
-                        <div className="star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/></div>
-                    </div> 
-                    <div className="skill skill2">
-                      <DiCss3Full className='skill-icon'/>
-                        <h4>CSS</h4>
-                        <div className="star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/></div>
-                    </div>
-                    <div className="skill skill3">
-                      <BsBootstrap className='skill-icon'/>
-                        <h4>BOOTSTRAP</h4>
-                        <div className="star"><AiOutlineStar/><AiOutlineStar/></div>
-                    </div>
-                    <div className="skill skill4">
-                      <DiSass className='skill-icon'/>
-                        <h4>SCSS</h4>
-                        <div className="star">
-                        <AiOutlineStar/><AiOutlineStar/>
-                        </div>
-                    </div>
-                    <div class="skill skill5">
-                        <DiJavascript1 className='skill-icon'/>
-                        <h4>JAVASCRIPT</h4>
-                        <div class="star">
-                        <AiOutlineStar/><AiOutlineStar/>
-                        </div>
-                    </div>
-                    <div className="skill skill6">
-                        <DiReact className='skill-icon'/>
-                        <h4>REACT</h4>
-                        <div className="star">
-                          <AiOutlineStar/><AiOutlineStar/>
-                        </div>
-                    </div>
-                    <div className="skill skill7">
-                        <FaNode className='skill-icon'/>
-                        <h4>NODE</h4>
-                        <div className="star">
-                          <AiOutlineStar/>
-                        </div>
-                    </div>
-                    <div className="skill skill8">
-                        <DiPython className='skill-icon'/>
-                        <h4>PYTHON</h4>
-                        <div class="star">
-                          <AiOutlineStar/>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <h3>Skills</h3>
+      <div className="skills_container">
+        <div className="skill skill1">
+          <AiOutlineHtml5 className='skill-icon'/>
+          <h4>HTML</h4>
+          <div className="star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/></div>
+        </div> 
+        <div className="skill skill2">
+          <DiCss3Full className='skill-icon'/>
+          <h4>CSS</h4>
+          <div className="star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/></div>
+        </div>
+        <div className="skill skill3">
+          <BsBootstrap className='skill-icon'/>
+          <h4>BOOTSTRAP</h4>
+          <div className="star"><AiOutlineStar/><AiOutlineStar/></div>
+        </div>
+          <div className="skill skill4">
+          <DiSass className='skill-icon'/>
+          <h4>SCSS</h4>
+          <div className="star"><AiOutlineStar/><AiOutlineStar/></div>
+        </div>
+        <div class="skill skill5">
+          <DiJavascript1 className='skill-icon'/>
+          <h4>JAVASCRIPT</h4>
+          <div class="star"><AiOutlineStar/><AiOutlineStar/></div>
+        </div>
+        <div className="skill skill6">
+          <DiReact className='skill-icon'/>
+          <h4>REACT</h4>
+          <div className="star"><AiOutlineStar/><AiOutlineStar/></div>
+        </div>
+        <div className="skill skill7">
+          <FaNode className='skill-icon'/>
+          <h4>NODE</h4>
+          <div className="star"><AiOutlineStar/></div>
+        </div>
+        <div className="skill skill8">
+          <DiPython className='skill-icon'/>
+          <h4>PYTHON</h4>
+          <div class="star"><AiOutlineStar/></div>
+        </div>
+      </div>
+    </div>
   )
 }
 

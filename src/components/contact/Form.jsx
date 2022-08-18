@@ -6,7 +6,9 @@ import {BsArrowLeft} from 'react-icons/bs'
 
 function Form() {
 
-  const { submit, formErrors,  onInputChange, onSubmitMessage} = useContext(Context);
+ 
+
+  const { submit, formErrors,  onInputChange, sendEmail} = useContext(Context);
 
   return (
     <div className='formContainer'>
@@ -17,20 +19,24 @@ function Form() {
         <div className='message-me'>
           <TextAnimation className='text-animation'/>
         </div>
-        <form onSubmit={onSubmitMessage} className='form'>
+        <form onSubmit={sendEmail} className='form'>
           <div className='inputContainer'>
             <label htmlFor='name'>Name</label>
-            <input type='text' name='name' id='name' onChange={onInputChange}/>
+            <input type='text' name='name' id='name' onChange={onInputChange} required/>
           </div>
           <p>{formErrors.name}</p>
           <div className='inputContainer'>
             <label htmlFor='email'>Email</label>
-            <input type='email' name='email' id='email' onChange={onInputChange}/>
+            <input type='email' name='email' id='email' onChange={onInputChange} required/>
           </div>
           <p>{formErrors.email}</p>
           <div className='inputContainer'>
+            <label htmlFor='subject'>Subject</label>
+            <input id='subject' name='subject' onChange={onInputChange}/>
+          </div>
+          <div className='inputContainer'>
             <label htmlFor='message'>Your message</label>
-            <textarea id='message' name='message' placeholder='Say hi!' onChange={onInputChange}></textarea>
+            <textarea id='message' name='message' placeholder='Say hi!' onChange={onInputChange} required></textarea>
           </div>
           <p>{formErrors.message}</p>
           <button type='submit'>Send message</button>

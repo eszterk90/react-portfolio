@@ -1,11 +1,10 @@
 import React, {useContext} from 'react'
 import Context from '../../store/context'
 import {Link} from 'react-router-dom'
-import CreateBlog from '../../images/create-blog-2.png'
 import Calculator from '../../images/calculator.png'
-import Monsters from '../../images/monsters-rolodex.png'
-import CrwnProject from '../../images/crwn-project.png'
-import DogFinder from '../../images/dog-finder.png'
+import CrwnProject from '../../images/crwn-clothing.png'
+import Agency from '../../images/x-agency.png'
+
 
 function Projects() {
 
@@ -14,87 +13,55 @@ function Projects() {
     <section className="sec-3" id="projects">
     <h2>Projects</h2>
     <div className="projects_wrapper">
-        <div className="projects p-1">
+        <div className="projects">
             <div className="project_container">
-                <img src={CreateBlog} alt="project"/>
+                <img src={Agency} alt="project"/>
                 <div className="click_here">
-                    <Link to="/blog" target="_about">Blog</Link>
+                    <a href="https://x-agency.vercel.app/" target="_about">X-Agency</a>
                 </div>
             </div>
             <div className="description">
                 <h5>What is this?</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nam ea, perferendis pariatur explicabo illo doloribus! Veritatis quia molestiae qui!</p>
+                <p>We created  as a group project the frontend side of a fictive agency website, specializing in web development and online marketing. We made decisions about the project architecture and layout as a group. </p>
+                <p>Technologies: React, SCSS, HTML5</p>
             </div>
         </div>
-        <div className="projects p-2">
-            <div className="project_container">
-                <img src={Calculator} alt="project"/>
-                <div className="click_here">
-                    <Link to="/calculator" target="_about">Calculator App</Link>
-                </div>
-            </div> 
-            <div className="description">
-                <h5>What is this?</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nam ea, perferendis pariatur explicabo illo doloribus! Veritatis quia molestiae qui!</p>
-            </div>
-        </div>
-        <div className="projects p-3">
+        <div className="projects">
             <div className="project_container">
                 <img src={CrwnProject} alt='project'/>
                 <div className="click_here">
-                    <Link to="/monsters" target="_about">CRWN-Webshop</Link>
+                    <a href="#" target="_about">CRWN-Webshop</a>
                 </div>
             </div>
             <div className="description">
                 <h5>What is this?</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nam ea, perferendis pariatur explicabo illo doloribus! Veritatis quia molestiae qui!</p>
+                <p>This is a full-stack E-commerce app that I created by completing the Complete React Developer in 2022 on Udemy. Building this project I learnt about design patterns, how to architect my app, organize code, structure folders, and how to think about performance.</p>
+                <p>Technologies: React, Firebase, SCSS, Redux, GraphQL, Typescript</p>
             </div>
         </div>
+        <div className="projects">
+        <div className="project_container">
+            <img src={CrwnProject} alt="project"/>
+            <div className="click_here">
+                <Link to="/calculator" target="_about">CWRN Webshop</Link>
+            </div>
+        </div> 
+        <div className="description">
+        <h5>What is this?</h5>
+        <p>This is a full-stack E-commerce app that I created by completing the Complete React Developer in 2022 on Udemy. Building this project I learnt about design patterns, how to architect my app, organize code, structure folders, and how to think about performance. Technologies: React, Firebase, SCSS, Redux, GraphQL, Typescript</p>
+        </div>
+    </div>
     </div>
 
     {/* -------- */}
 
-    {active ? (<div className="projects_wrapper">
-        <div className="projects p-1">
-            <div className="project_container">
-                <img src={CreateBlog} alt="project"/>
-                <div className="click_here">
-                    <Link to="/blog" target="_about">Blog</Link>
-                </div>
-            </div>
-            <div className="description">
-                <h5>What is this?</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nam ea, perferendis pariatur explicabo illo doloribus! Veritatis quia molestiae qui!</p>
-            </div>
-        </div>
-        <div className="projects p-2">
-            <div className="project_container">
-                <img src={Calculator} alt="project"/>
-                <div className="click_here">
-                    <Link to="/calculator" target="_about">Calculator App</Link>
-                </div>
-            </div> 
-            <div className="description">
-                <h5>What is this?</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nam ea, perferendis pariatur explicabo illo doloribus! Veritatis quia molestiae qui!</p>
-            </div>
-        </div>
-        <div className="projects p-3">
-            <div className="project_container">
-                <img src={Monsters} alt='project'/>
-                <div className="click_here">
-                    <Link to="/monsters" target="_about">Monsters rolodex</Link>
-                </div>
-            </div>
-            <div className="description">
-                <h5>What is this?</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nam ea, perferendis pariatur explicabo illo doloribus! Veritatis quia molestiae qui!</p>
-            </div>
-        </div>
-    </div>) : null}
+    {active && (<div>
+        
+    </div>)}
 
     {active ? <div className="project_list"><button onClick={toggleProjects}>Show less</button></div> : <div className="project_list"><button onClick={toggleProjects}>Show more</button></div>}
 </section>
+
   )
 }
 

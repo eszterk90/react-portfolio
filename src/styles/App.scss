@@ -10,7 +10,6 @@
 @import './mixins';
 
 
-
 html, body, #root {
     width: 100%;
     height: 100%;
@@ -33,11 +32,13 @@ h1, h2, h3, h4, h5 {
     font-family: 'Bebas Neue';
 }
 
-// mobile screen version
+// tablet screen version
 
-@media screen and (max-width: 990px) {
+
+ @media screen and (max-width: 768px) {
+
     html {
-        font-size: 80%;
+        font-size: 90%;
         scroll-padding-block-start: 8rem;
     }
 
@@ -104,6 +105,57 @@ h1, h2, h3, h4, h5 {
         display: none;
     }
 
+     // about section
+
+    .sec-2 {
+        grid-template-areas: 'intro skills'
+                             'about about';
+        grid-template-rows: repeat(2, 50%);
+        grid-template-columns: 30% 70%;
+    }
+    
+    .side_container {
+        padding-top: 2rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        .intro h3 {
+            text-align: center;
+            padding: 1rem;
+        }
+        .img_container {
+            padding: 1rem 0;
+            margin-top: 1rem;
+        }
+    }
+    
+    .skills {
+        align-self: center;
+        border: none;
+    }
+
+    // project section
+
+    .projects_wrapper {
+        flex-direction: column;
+    }
+
+    .projects {
+        width: 90%;
+    }
+
+}
+
+ 
+// mobile screen version
+
+@media screen and (max-width: 568px) {
+    html {
+        font-size: 80%;
+        scroll-padding-block-start: 8rem;
+    }
+
     // about section
 
     .sec-2 {
@@ -134,18 +186,7 @@ h1, h2, h3, h4, h5 {
         align-self: center;
         border: none;
     }
-   
-    // project section
 
-    .projects_wrapper {
-        flex-direction: column;
-    }
-
-    .projects {
-        width: 90%;
-    }
-
-  
     // contact section
     .main-contact {
         grid-template-areas: 'form' 
@@ -170,7 +211,8 @@ h1, h2, h3, h4, h5 {
         margin: 0;
         width: 100%;
     }
-
+   
+    
 }
 
     

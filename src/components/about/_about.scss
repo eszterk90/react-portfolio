@@ -8,7 +8,7 @@
     padding-top: 4rem;
     grid-template-areas: 'intro skills'
                          'about about';
-    grid-template-rows: 40% 60%;
+    grid-template-rows: 50% 50%;
     grid-template-columns: 50% 50%;
     background-image: radial-gradient(circle, $color-yellow, $color-lightGrey);
 }
@@ -16,7 +16,8 @@
 .side_container {
     grid-area: intro;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     border-bottom: 3px solid $color-black;
     //padding: $padding-container;
@@ -32,6 +33,8 @@
     .intro h3 {
         color: $color-black;
         font-size: $h3-size;
+        text-align: center;
+        padding: $sm-padding-container;
     }
 }
 

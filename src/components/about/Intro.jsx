@@ -8,7 +8,7 @@ function Intro() {
             <img src={Image} alt=""/>
         </div>
         <div className="intro">
-            <h3>Hi! My name is Eszter and I am a web developer based in Berlin.</h3>
+            <h3>Hi! My name is Eszter. I'm a full stack web developer.</h3>
         </div>
     </div>
   )

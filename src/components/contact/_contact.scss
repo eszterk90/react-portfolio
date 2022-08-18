@@ -9,7 +9,7 @@
     display: grid;
     grid-template-areas: 'form contact';
     grid-template-rows: 100%;
-    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-columns: 50% 50%;
     background-color: $color-grey;
 }
 

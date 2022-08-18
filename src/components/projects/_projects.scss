@@ -13,27 +13,31 @@
         color: $color-yellow;
         text-align: center;
     }
-    .project_list button {
-        @include anchor;
-        color: $color-yellow;
-        background-color: $color-grey;
-        font-size: 2rem;
-        display: block;
-        text-align: center;
-        font-weight: 100;
-        padding: 0.8rem 1.5rem;
-        border: 1px solid $color-green;
-        width: fit-content;
-        margin: 2rem auto;
-        border-radius: $border-radius;
-        &:hover {
-            background-color: $color-lightGrey;
-        }
+    .project_list {
+        button {
+            @include anchor;
+            color: $color-yellow;
+            background-color: $color-grey;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            font-weight: 100;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid $color-green;
+            width: fit-content;
+            margin: 2rem auto;
+            border-radius: $border-radius;
+            &:hover {
+                background-color: $color-lightGrey;
+            }
+        } 
     }
 }
 
 .projects_wrapper {
-    @include flex-center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     margin: $margin-container;
 }
 
@@ -58,6 +62,8 @@
         }
     }
 }
+
+
 .project_container .click_here {
     display: none;
     a {

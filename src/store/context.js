@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useReducer} from 'react';
+import emailjs from 'emailjs-com';
 
 const names = [
     { value: "E", top: '50%', right: '75%' },
@@ -80,7 +81,7 @@ const onClickHandler = () => {
 
       // Form Component
 
-const [userMessage, setUserMessage] = useState({name: '', email: '', message: ''});
+const [userMessage, setUserMessage] = useState({name: '', email: '', subject: '', message: ''});
 const [allMessages, setAllMessages] = useState([]);
 const [submit, setSubmit] = useState(false);
 const [formErrors, setFormErrors] = useState({});
@@ -90,12 +91,23 @@ const onInputChange = (e) => {
     console.log(userMessage);
 }
 
-const onSubmitMessage = (e) => {
+// const onSubmitMessage = (e) => {
+//     e.preventDefault();
+//     setAllMessages([...allMessages, userMessage]);
+//   }
+
+  const sendEmail = (e) => {
     e.preventDefault();
-    setAllMessages([...allMessages, userMessage]);
     setFormErrors(validate(userMessage));
+    emailjs.sendForm('service_417jx8h', 'template_lrn7kbv', e.target, 'kZcQ3JS0ctp-czOJH')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+    e.target.reset();
     setSubmit(true);
-  }
+  };
 
 useEffect(() => {
     if(Object.keys(formErrors).length === 0 && submit) {
@@ -111,6 +123,9 @@ const validate = (values) => {
     if(!values.email) {
       errors.email = 'Email is required!'
     }
+    if(!values.subject) {
+      errors.subject = 'Subject is required!'
+    }
     if (values.message.length === 0) {
       errors.message = 'You are trying to send an empty message.'
     }
@@ -121,7 +136,6 @@ const validate = (values) => {
     setUserMessage({name: '', email: '', message: ''})
     setSubmit(false);
   }
-
 
   // navbar
 
@@ -139,7 +153,7 @@ const validate = (values) => {
           <Context.Provider value={{
               names, name, setName, onMouseEnter, randomize, onMouseLeave, text, setText, count, onClickHandler, toggleProjects, active,
               
-              userMessage, setUserMessage, allMessages, setAllMessages, submit, setSubmit, formErrors, setFormErrors, onInputChange, onSubmitMessage, validate, handleResubmit, useEffect, open, setOpen
+              userMessage, setUserMessage, allMessages, setAllMessages, submit, setSubmit, formErrors, setFormErrors, onInputChange, sendEmail, validate, handleResubmit, useEffect, open, setOpen
             }}>{props.children}
           </Context.Provider>
       )

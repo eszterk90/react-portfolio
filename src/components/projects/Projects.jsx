@@ -1,9 +1,8 @@
 import React, {useContext} from 'react'
 import Context from '../../store/context'
-import {Link} from 'react-router-dom'
 import Library from '../../images/Library.png'
 import CrwnProject from '../../images/CWRN-WEBSHOP.png'
-import Agency from '../../images/X-AGENCY.png'
+import Agency from '../../images/agency.png'
 
 
 function Projects() {

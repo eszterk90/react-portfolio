@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import Context from '../../store/context'
 import Library from '../../images/Library.png'
 import CrwnProject from '../../images/CWRN-WEBSHOP.png'
-import Agency from '../../images/agency.png'
+import Agency from '../../images/X-AGENCY.png'
 
 
 function Projects() {

@@ -21,7 +21,7 @@ function Projects() {
             </div>
             <div className="description">
                 <h5>What is this?</h5>
-                <p>In this group project we created the frontend side of a fictive agency website, specializing in web development and online marketing. I took part in implementing the project architecture using context api and wrote the code for the career, contact and about pages.</p>
+                <p>In this group project we created the frontend side of a fictive agency website, specializing in web development and online marketing. I took part in implementing the project architecture and state management using context api and was responsible for creating and styling the career, contact and about pages.</p>
                 <p>Technologies: React, SCSS, HTML5</p>
             </div>
         </div>
@@ -47,7 +47,7 @@ function Projects() {
         </div> 
         <div className="description">
         <h5>What is this?</h5>
-        <p>In this team project we created a full-stack mockup library, in which I implemented and leveraged the logic and functionality of the code using context api, took part in writing the server side code and created the home page, profile and single book components.</p>
+        <p>In this team project we created a full-stack mockup library, in which I wrote the most part of the server-side code, implemented state management using context api on the client side and took part in database management. Besides that I created and styled the home page, profile and single book components.</p>
         <p>Technologies: React, MongoDB, Express, Node, SCSS, HTML5</p>
         </div>
     </div>

@@ -53,13 +53,16 @@ function Projects() {
     </div>
     </div>
 
-    {/* -------- */}
-
+    {/* 
+    
     {active && (<div>
         
     </div>)}
 
-    {active ? <div className="project_list"><button onClick={toggleProjects}>Show less</button></div> : <div className="project_list"><button onClick={toggleProjects}>Show more</button></div>}
+    {active ? <div className="project_list"><button onClick={toggleProjects}>Show less</button></div> : <div className="project_list"><button onClick={toggleProjects}>Show more</button></div>} 
+
+    */}
+
 </section>
 
   )

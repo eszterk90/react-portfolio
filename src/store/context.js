@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useReducer} from 'react';
+import React, {useState, useEffect} from 'react';
 import emailjs from 'emailjs-com';
 
 const names = [
@@ -24,8 +24,6 @@ const Context = React.createContext();
 export function ContextProvider(props) {
 
 const [name, setName] = useState(names);
-
-
 const [text, setText] = useState(false);
 
 const randomize = () => Math.floor(Math.random() * 500);

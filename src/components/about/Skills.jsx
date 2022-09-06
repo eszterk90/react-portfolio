@@ -1,6 +1,7 @@
 import React from 'react'
 import {AiOutlineHtml5, AiOutlineStar} from 'react-icons/ai'
 import {DiCss3Full, DiSass, DiJavascript1, DiReact, DiPython} from 'react-icons/di'
+import {SiMongodb} from 'react-icons/si'
 import {BsBootstrap} from 'react-icons/bs'
 import {FaNode} from 'react-icons/fa' 
 
@@ -84,12 +85,12 @@ function Skills() {
         <div className="skill skill7">
           <FaNode className='skill-icon'/>
           <h4>NODE</h4>
-          <div className="star"><AiOutlineStar/></div>
+          <div className="star"><AiOutlineStar/><AiOutlineStar/></div>
         </div>
         <div className="skill skill8">
-          <DiPython className='skill-icon'/>
-          <h4>PYTHON</h4>
-          <div class="star"><AiOutlineStar/></div>
+          <SiMongodb className='skill-icon'/>
+          <h4>MongoDB</h4>
+          <div class="star"><AiOutlineStar/><AiOutlineStar/></div>
         </div>
       </div>
     </div>

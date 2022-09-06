@@ -10,7 +10,9 @@
                          'about about';
     grid-template-rows: 50% 50%;
     grid-template-columns: 50% 50%;
-    background-image: radial-gradient(circle, $color-yellow, $color-lightGrey);
+    background-color: $color-grey;
+    width: 95%;
+    margin: 0 auto;
 }
 
 .side_container {
@@ -19,7 +21,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-bottom: 3px solid $color-black;
+    // border-bottom: 3px solid $color-black;
     //padding: $padding-container;
     .img_container img {
         width: 15rem;
@@ -31,7 +33,7 @@
     }
     
     .intro h3 {
-        color: $color-black;
+        color: $color-yellow;
         font-size: $h3-size;
         text-align: center;
         padding: $sm-padding-container;
@@ -43,9 +45,9 @@
 .about {
     grid-area: about;
     display: flex;
-    border-top: 3px solid;
+    // border-top: 3px solid;
     margin-top: 3px;
-    border-image: radial-gradient(circle, $color-yellow, $color-lightGrey);
+    // border-image: radial-gradient(circle, $color-yellow, $color-lightGrey);
     flex-direction: column;
     padding: $sm-padding-container;
     background-color: $color-grey;
@@ -66,13 +68,13 @@
     grid-area: skills;
     width: 100%;
     padding: $sm-padding-container;
-    border-bottom: 3px solid $color-black;
+    // border-bottom: 3px solid $color-black;
     display: flex;
     flex-direction: column;
     h3 {
         text-align: center;
         font-size: $h3-size;
-        color: $color-black;
+        color: $color-yellow;
     }
     .skills_container {
         display: grid;
@@ -88,11 +90,11 @@
             text-align: center;
             justify-content: center;
             align-items: center;
-            color: $color-grey;
+            color: $color-yellow;
             transition: transform 0.5s linear;
             &:hover {
                 transform: scale(1.1);
-                color: $color-lightGrey;
+                color: $color-green;
             }
             h4 {
                 font-family: 'IBM Plex Mono', monospace;

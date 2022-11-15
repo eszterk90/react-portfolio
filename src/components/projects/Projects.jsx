@@ -16,7 +16,7 @@ function Projects() {
             <div className="project_container">
                 <img src={Noix} alt="project"/>
                 <div className="click_here">
-                    <a href="https://make.noix.space/" target="_about">NÖIX</a>
+                    <a href="https://make.noix.space/" target="_about">NÖIX - connects musicians</a>
                 </div>
             </div>
             <div className="description">
@@ -42,7 +42,7 @@ function Projects() {
             <div className="project_container">
                 <img src={Library} alt="project"/>
                 <div className="click_here">
-                    <a href="https://mern-library-five.vercel.app/" target="_about">Library</a>
+                    <a href="https://mern-library-five.vercel.app/" target="_about">Mock-up Library</a>
                 </div>
             </div> 
             <div className="description">

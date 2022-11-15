@@ -51,19 +51,19 @@ function Projects() {
             <p>Technologies: React, MongoDB, Express, Node, SCSS, HTML5</p>
             </div>
         </div>
-        <div className="projects">
-        <div className="project_container">
-            <img src={Agency} alt="project"/>
-            <div className="click_here">
-                <a href="https://x-agency.vercel.app/" target="_about">X-Agency</a>
+         <div className="projects">
+            <div className="project_container">
+                <img src={Agency} alt="project"/>
+                <div className="click_here">
+                    <a href="https://x-agency.vercel.app/" target="_about">X-Agency</a>
+                </div>
+            </div>
+            <div className="description">
+                <h5>What is this?</h5>
+                <p>In this group project we created the frontend side of a fictive agency website, specializing in web development and online marketing. I took part in implementing the project architecture and state management using context api and was responsible for creating and styling the career, contact and about pages.</p>
+                <p>Technologies: React, SCSS, HTML5</p>
             </div>
         </div>
-        <div className="description">
-            <h5>What is this?</h5>
-            <p>In this group project we created the frontend side of a fictive agency website, specializing in web development and online marketing. I took part in implementing the project architecture and state management using context api and was responsible for creating and styling the career, contact and about pages.</p>
-            <p>Technologies: React, SCSS, HTML5</p>
-        </div>
-    </div>
     </div>
 
     {/* 

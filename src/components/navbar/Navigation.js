@@ -1,10 +1,10 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
+import Context from '../../store/context'
 import NavLinks from './NavLinks'
-import Logo from '../../images/pattern.svg'
+
 import CV from '../../assets/EszterKadar_CV_EN_2023.pdf'
 
 const Navigation = () => {
-
     const [colorChange, setColorchange] = useState(false);
 
     const changeNavbarColor = () =>{
@@ -19,7 +19,7 @@ const Navigation = () => {
     window.addEventListener('scroll', changeNavbarColor);
 
     return (
-    <nav className={colorChange ? 'color-change' : 'navigation'}>
+    <nav className={colorChange ? 'navigation color-change' : 'navigation transparent'}>
     
         <NavLinks/>
         <div>

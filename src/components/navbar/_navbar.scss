@@ -3,12 +3,38 @@
 
 /* navbar styling */
 
+.NavBar .color-change {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-grey;
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    .button {
+        border: 1px solid $color-green;
+        padding: 8px;
+        margin-right: 1.5vw;
+        border-radius: 3px;
+        &:hover {
+            border: 1px solid white;
+        }
+        .cv-link {
+            text-decoration: none;
+            color: white;
+            font-family: 'Bebas Neue';
+            letter-spacing: 5px;
+        }
+    }
+}
 
 .NavBar .navigation {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: $color-grey;
+    background-color: inherit;
     height: 10vh;
     width: 100%;
     position: fixed;

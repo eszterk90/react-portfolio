@@ -158,6 +158,7 @@ h1, h2, h3, h4, h5 {
         .skills_container {
             display: grid;
             place-items: center;
+            padding-bottom: 2rem;
             grid-template-areas: "skill1 skill2 skill3"
                                  "skill5 skill5 skill6"
                                  "skill7 skill8 skill9"

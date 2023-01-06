@@ -14,12 +14,28 @@
     position: fixed;
     top: 0;
     z-index: 10;
-    .logo {
-        animation: rotation 5s linear infinite;
+    // .logo {
+    //     animation: rotation 5s linear infinite;
+    //     &:hover {
+    //         animation: scale 2s linear;
+    //     }
+    // }
+    .button {
+        border: 1px solid $color-green;
+        padding: 8px;
+        margin-right: 1.5vw;
+        border-radius: 3px;
         &:hover {
-            animation: scale 2s linear;
+            border: 1px solid white;
+        }
+        .cv-link {
+            text-decoration: none;
+            color: white;
+            font-family: 'Bebas Neue';
+            letter-spacing: 5px;
         }
     }
+    
 }
 
 @keyframes rotation {
@@ -39,7 +55,7 @@
 .NavBar nav ul li {
     display: inline-block;
     margin: 1.5vw;
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     a {
         text-decoration: none;
         color: white;

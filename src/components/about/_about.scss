@@ -80,9 +80,10 @@
         display: grid;
         place-items: center;
         grid-template-areas: "skill1 skill2 skill3 skill4"
-                             "skill5 skill6 skill7 skill8";
+                             "skill5 skill6 skill7 skill8"
+                             "skill9 skill10 skill11 skill12";
         grid-template-columns: repeat(4, 25%);
-        grid-template-rows: repeat(2, 0.5fr);
+        grid-template-rows: repeat(3, 0.33fr);
         .skill {
             display: flex;
             flex-direction: column;
@@ -101,7 +102,7 @@
                 font-weight: 300;
            }
            .skill-icon {
-            font-size: 4rem;
+            font-size: 2rem;
             font-weight: 200;
            }
            .star i {

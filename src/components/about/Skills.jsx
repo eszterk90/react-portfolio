@@ -1,8 +1,7 @@
 import React from 'react'
 import {AiOutlineHtml5, AiOutlineStar} from 'react-icons/ai'
-import {DiCss3Full, DiSass, DiJavascript1, DiReact, DiPython} from 'react-icons/di'
-import {SiMongodb} from 'react-icons/si'
-import {BsBootstrap} from 'react-icons/bs'
+import {DiCss3Full, DiSass, DiJavascript1, DiReact} from 'react-icons/di'
+import {SiMongodb, SiTypescript, SiAngular, SiExpress, SiMysql, SiFirebase} from 'react-icons/si'
 import {FaNode} from 'react-icons/fa' 
 
 // const skills = [
@@ -50,11 +49,10 @@ import {FaNode} from 'react-icons/fa'
 function Skills() {
   return (
     <div className="skills" id="skills">
-      <h3>Skills</h3>
       <div className="skills_container">
         <div className="skill skill1">
           <AiOutlineHtml5 className='skill-icon'/>
-          <h4>HTML</h4>
+          <h4>HTML5</h4>
           <div className="star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/></div>
         </div> 
         <div className="skill skill2">
@@ -63,33 +61,53 @@ function Skills() {
           <div className="star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/></div>
         </div>
         <div className="skill skill3">
-          <BsBootstrap className='skill-icon'/>
-          <h4>BOOTSTRAP</h4>
-          <div className="star"><AiOutlineStar/><AiOutlineStar/></div>
-        </div>
-          <div className="skill skill4">
           <DiSass className='skill-icon'/>
           <h4>SCSS</h4>
-          <div className="star"><AiOutlineStar/><AiOutlineStar/></div>
+          <div className="star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/></div>
+        </div>
+        <div class="skill skill4">
+          <DiJavascript1 className='skill-icon'/>
+          <h4>Javascript</h4>
+          <div class="star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/></div>
         </div>
         <div class="skill skill5">
-          <DiJavascript1 className='skill-icon'/>
-          <h4>JAVASCRIPT</h4>
+          <SiTypescript className='skill-icon'/>
+          <h4>Typescript</h4>
           <div class="star"><AiOutlineStar/><AiOutlineStar/></div>
         </div>
         <div className="skill skill6">
           <DiReact className='skill-icon'/>
-          <h4>REACT</h4>
-          <div className="star"><AiOutlineStar/><AiOutlineStar/></div>
+          <h4>React</h4>
+          <div className="star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/></div>
         </div>
         <div className="skill skill7">
-          <FaNode className='skill-icon'/>
-          <h4>NODE</h4>
+          <SiAngular className='skill-icon'/>
+          <h4>Angular</h4>
           <div className="star"><AiOutlineStar/><AiOutlineStar/></div>
         </div>
         <div className="skill skill8">
+          <FaNode className='skill-icon'/>
+          <h4>Node</h4>
+          <div className="star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/></div>
+        </div>
+        <div className="skill skill9">
+          <SiExpress className='skill-icon'/>
+          <h4>Express</h4>
+          <div className="star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/></div>
+        </div>
+        <div className="skill skill10">
           <SiMongodb className='skill-icon'/>
           <h4>MongoDB</h4>
+          <div class="star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/></div>
+        </div>
+        <div className="skill skill11">
+          <SiMysql className='skill-icon'/>
+          <h4>MySQL</h4>
+          <div class="star"><AiOutlineStar/><AiOutlineStar/></div>
+        </div>
+        <div className="skill skill12">
+          <SiFirebase className='skill-icon'/>
+          <h4>Firebase</h4>
           <div class="star"><AiOutlineStar/><AiOutlineStar/></div>
         </div>
       </div>
